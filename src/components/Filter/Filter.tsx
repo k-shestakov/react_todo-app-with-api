@@ -12,6 +12,7 @@ export const Filter: React.FC<Props> = ({ onFilter, filter }) => {
     <nav className="filter" data-cy="Filter">
       {Object.values(FilterSetting).map(value => (
         <a
+          key={value}
           href="#/"
           className={cn('filter__link', {
             selected: filter === value,
