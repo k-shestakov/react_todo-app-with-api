@@ -34,7 +34,9 @@ export const TodoItem: React.FC<Props> = ({
       return;
     }
 
-    if (editTitle === title) {
+    if (editTitle.trim() === title) {
+      setEditTitle(editTitle.trim());
+
       return;
     }
 
