@@ -18,12 +18,12 @@ const prepareFilterTodos = (todos: Todo[], { filterBy }: FilterParams) => {
   const filteredTodos = [...todos];
 
   switch (filterBy) {
-    case FilterSetting.all:
-      return filteredTodos;
     case FilterSetting.active:
       return filteredTodos.filter(todo => !todo.completed);
+
     case FilterSetting.completed:
       return filteredTodos.filter(todo => todo.completed);
+
     default:
       return filteredTodos;
   }

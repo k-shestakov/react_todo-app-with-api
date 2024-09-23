@@ -45,7 +45,7 @@ export const Header: React.FC<Props> = ({
 
     const normilizeTitle = title.toLowerCase().trim();
 
-    if (normilizeTitle === '') {
+    if (!normilizeTitle) {
       onError('Title should not be empty');
 
       return;
@@ -83,7 +83,7 @@ export const Header: React.FC<Props> = ({
     <header className="todoapp__header">
       {/* this button should have `active` class only if all todos are completed */}
 
-      {todosLength !== 0 && (
+      {!!todosLength && (
         <button
           type="button"
           className={cn('todoapp__toggle-all', {
